@@ -1,0 +1,235 @@
+/* styles.css - Barangay Digital Citizen Portal */
+/* Desktop-first responsive layout, modern gov style */
+
+:root{
+  --primary:#1E40AF;   /* royal blue */
+  --accent:#22274d;    /* golden yellow */
+  --bg:#F3F4F6;
+  --muted:#6B7280;
+  --text:#0F172A;
+  --card:#ffffff;
+  --radius:14px;
+  --maxw:1100px;
+  --gap:20px;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  font-size:16px;
+}
+
+/* make room for fixed header so content isn't hidden behind it */
+main{padding-top:72px}
+
+/* page wrap */
+.wrap{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:5px;
+}
+
+/* header */
+.site-header{
+  background:var(--primary);
+  color:#fff;
+  padding:10px 0;
+  box-shadow:0 6px 18px rgba(14, 30, 70, 0.12);
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  width:100%;
+  z-index:999;
+  font-size: 18px;
+
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{width:56px;height:56px;border-radius:6px;object-fit:cover}
+.logo-text strong{display:block;font-size:18px;letter-spacing:0.6px}
+.logo-text .sub{font-size:12px;opacity:0.95}
+
+/* nav */
+.main-nav a{
+  color:rgba(255,255,255,0.95);
+  text-decoration:none;
+  margin-left:18px;
+  font-weight:600;
+}
+.btn-login{
+  background:var(--accent);
+  color:var(--text);
+  padding:10px 14px;
+  border-radius:10px;
+  box-shadow: 0 6px 12px rgba(26, 18, 0, 0.08);
+}
+
+/* hero */
+.hero{
+  position:relative;
+  /* keep a comfortable minimum but cap the maximum so the hero never becomes excessively tall */
+  min-height:360px;
+  /* limit hero height relative to viewport to avoid very tall hero on large screens */
+  max-height:vh;
+  display:flex;
+  align-items:center;
+  margin-bottom:40px;
+   background:linear-gradient(180deg, rgb(25, 27, 27), rgba(5, 27, 27));
+  padding-bottom: 15%;
+  /* prevent inner content or background images from overflowing the capped height */
+  overflow:hidden;
+  color: #fff;
+}
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background-image: url('https://imgs.search.brave.com/D8SJI1DI3Kt7PVpFvUghND6FWBvIOrbEXjdHmfEE7GA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9wdWVy/dG8tcHJpbmNlc2Et/cGFsYXdhbi1waGls/aXBwaW5lcy1tYXJj/aC1iZWlnZS1zdG9u/ZS1idWlsZGluZy1w/cm92aW5jaWFsLWNh/cGl0b2wtdW5kZXIt/Ymx1ZS1za3ktcmVz/ZW1ibGluZy1iZWVo/aXZlLWdyZWVuLTE1/MzExODg4MC5qcGc');
+  background-size:cover;
+  background-position:center;
+  opacity:0.18;
+  filter:grayscale(12%) contrast(95%);
+}
+.hero-inner{
+  position:relative;
+  padding-top: 10%;
+}
+.hero h1{
+  font-size:42px;
+  margin:0 0 12px;
+  line-height:1.02;
+  font-weight:800;
+
+}
+.hero .lead{font-size:18px;margin-bottom:18px;opacity:0.95}
+.accent{color:var(--accent)}
+.btn-primary{
+  display:inline-block;
+  background:var(--accent);
+  color:#fff;
+  padding:14px 20px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 8px 20px rgba(250, 204, 53, 0.14);
+}
+
+/* sections */
+.section{padding:36px 0}
+.section-title{font-size:28px;margin:0 0 22px;text-align:center}
+
+/* service cards */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-bottom:28px;
+}
+.card{
+  background:var(--card);
+  border-radius:12px;
+  padding:20px;
+  box-shadow: 0 6px 18px rgba(12, 20, 50, 0.06);
+  text-align:center;
+}
+.card .icon{font-size:30px;margin-bottom:12px}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{margin:0;color:var(--muted)}
+
+/* service form */
+.service-form{
+  margin-top:10px;
+  display:flex;
+  gap:var(--gap);
+  align-items:flex-start;
+  flex-wrap:wrap;
+}
+.service-form h3{width:100%;margin-top:8px}
+.service-form form{
+  background:var(--card);
+  padding:18px;
+  border-radius:12px;
+  box-shadow: 0 6px 18px rgba(12, 20, 50, 0.06);
+  width:100%;
+  max-width:720px;
+}
+.service-form label{display:block;margin-bottom:12px;font-size:14px;color:var(--muted)}
+.service-form input,
+.service-form select,
+.service-form textarea{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #E6E9EE;
+  font-size:14px;
+  margin-top:6px;
+  background: #fff;
+}
+.form-actions{display:flex;gap:12px;justify-content:flex-end}
+.feedback{
+  background:#ECFDF5;
+  color:#065F46;
+  padding:10px 12px;
+  border-radius:8px;
+  margin-bottom:12px;
+  border:1px solid rgba(6,95,70,0.08);
+}
+
+/* announcements */
+.ann-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.announce{
+  background:var(--card);
+  padding:16px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(12,20,50,0.06);
+}
+.announce h4{margin:0 0 8px}
+.announce p{margin:0 0 8px;color:var(--muted)}
+.announce time{font-size:13px;color:#9CA3AF}
+
+/* footer */
+.site-footer{
+  background:linear-gradient(180deg,var(--primary), #14306f);
+  color:#fff;
+  margin-top:40px;
+  padding:24px 0;
+}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-inner h4{margin:0}
+.footer-right{opacity:0.92}
+
+/* responsive */
+@media (max-width:1000px){
+  :root{--maxw:920px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .ann-grid{grid-template-columns:1fr}
+  .hero h1{font-size:36px}
+}
+@media (max-width:640px){
+  .header-inner{flex-direction:column;gap:12px;align-items:flex-start}
+  .main-nav{display:flex;flex-wrap:wrap;gap:8px}
+  .cards{grid-template-columns:1fr}
+  .wrap{padding:20px}
+  .hero{
+    /* smaller minimum for small screens and a mobile-friendly max height */
+    min-height:260px;
+    max-height:60vh;
+  }
+  .hero-inner{padding:32px 20px}
+  .logo img{width:48px;height:48px}
+}

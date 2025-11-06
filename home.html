@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Saklaw</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="logo">
+        <!-- You can replace with barangay seal image -->
+        <img src="https://imgs.search.brave.com/ln_ju330B84pQ05S5Y941vpBrCrGWaJqRw5jIcPPf-I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9h/L2EzL1BHUF9OZXdf/T2ZmaWNpYWxfU2Vh/bC5wbmc" alt="Barangay Seal" />
+        <div class="logo-text">
+          <strong>BARANGAY</strong>
+          <span class="sub">Digital Citizen Portal</span>
+        </div>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#announcements">Announcements</a>
+        <a href="#about">About</a>
+        <a class="btn-login" href="#login">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="wrap hero-inner">
+        <h1>Empowering Citizens<br>Through Digital Services</h1>
+        <p class="lead">Request documents, file complaints, apply for permits, and get barangay updates — all in one portal.</p>
+        <a class="btn-primary" href="#services">Access Services</a>
+      </div>
+    </section>
+
+    <section id="services" class="section services-section">
+      <div class="wrap">
+        <h2 class="section-title">Services</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="icon">📄</div>
+            <h3>Barangay Clearance</h3>
+            <p>Request official barangay clearances quickly.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">⚠️</div>
+            <h3>Complaints</h3>
+            <p>File complaints or incident reports confidentially.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🛠️</div>
+            <h3>Permits</h3>
+            <p>Apply for business, construction, and event permits.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📢</div>
+            <h3>Announcements</h3>
+            <p>See the latest barangay news, schedules, and programs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="announcements" class="section announcements-section">
+      <div class="wrap">
+        <h2 class="section-title">Announcements</h2>
+        <div class="ann-grid">
+          <article class="announce">
+            <h4>Barangay Clean-Up Drive</h4>
+            <p>Our scheduled clean-up drive will be on September 20. Join us at 7:00 AM at the community center.</p>
+            <time datetime="2025-09-20">Sep 20, 2025</time>
+          </article>
+
+          <article class="announce">
+            <h4>Community Center Renovation</h4>
+            <p>The barangay community center will start renovations on October 1. Services will be temporarily relocated.</p>
+            <time datetime="2025-10-01">Oct 1, 2025</time>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="wrap">
+        <h2 class="section-title">About the Portal</h2>
+        <p>Saklaw is a digital citizen portal designed to connect every resident to their barangay’s essential services. It streamlines local transactions such as document requests, permits, and announcements — all in one secure online platform. By bringing governance closer to the people, Saklaw empowers communities through accessibility, transparency, and efficiency.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <h4>Contact</h4>
+        <p>128 Main St., Barangay 1, City Name</p>
+        <p>Email: barangay@example.com</p>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:8px;">
+      <p style="text-align:center; margin:0;"> © 2025 Barangay Digital Portal | All Rights Reserve</p>
+    </div>
+  </footer>
+
+  <!-- small helpers -->
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const id = this.getAttribute('href');
+        if (id.length>1) {
+          e.preventDefault();
+          const el = document.querySelector(id);
+          if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
