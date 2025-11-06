@@ -7,7 +7,7 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+  <script src="https://kit.fontawesome.com/f02a36f28e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
@@ -27,7 +27,7 @@
         <a href="#services">Services</a>
         <a href="#announcements">Announcements</a>
         <a href="#about">About</a>
-        <a class="btn-login" href="#login">Login</a>
+        <a class="btn-login" href="#login"><i class="fa-solid fa-user"></i></a>
       </nav>
     </div>
   </header>
@@ -47,26 +47,38 @@
         <h2 class="section-title">Services</h2>
         <div class="cards">
           <article class="card">
-            <div class="icon">📄</div>
+            <div class="icon"><i class="fa-solid fa-paperclip"></i></div>
             <h3>Barangay Clearance</h3>
             <p>Request official barangay clearances quickly.</p>
           </article>
 
           <article class="card">
-            <div class="icon">⚠️</div>
+            <div class="icon"><i class="fa-solid fa-circle-exclamation"></i></div>
             <h3>Complaints</h3>
             <p>File complaints or incident reports confidentially.</p>
           </article>
 
           <article class="card">
-            <div class="icon">🛠️</div>
+            <div class="icon"><i class="fa-solid fa-pen-to-square"></i></div>
             <h3>Permits</h3>
             <p>Apply for business, construction, and event permits.</p>
           </article>
+          
+          <article class="card">
+            <div class="icon"><i class="fa-solid fa-heart-circle-bolt"></i></div>
+            <h3>Health Care</h3>
+            <p>See the closest Healthcare at your area.</p>
+          </article>
 
           <article class="card">
-            <div class="icon">📢</div>
-            <h3>Announcements</h3>
+            <div class="icon"><i class="fa-solid fa-school-flag"></i></i></div>
+            <h3>Education   </h3>
+            <p>See the latest barangay news, schedules, and programs.</p>
+          </article>
+
+           <article class="card">
+            <div class="icon"><i class="fa-solid fa-clipboard-list"></i></div>
+            <h3>Survey</h3>
             <p>See the latest barangay news, schedules, and programs.</p>
           </article>
         </div>
@@ -115,10 +127,22 @@
 
   <!-- small helpers -->
   <script>
-    // Smooth scroll for anchor links
+    // Smooth scroll for anchor links, with special handling for the login modal
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', function(e){
         const id = this.getAttribute('href');
+
+        // If this is the login link, open native dialog if available, else fallback to class toggle
+        if (id === '#login'){
+          e.preventDefault();
+          const modal = document.getElementById('login');
+          if (modal) {
+            if (typeof modal.showModal === 'function') modal.showModal();
+            else modal.classList.add('open');
+          }
+          return;
+        }
+
         if (id.length>1) {
           e.preventDefault();
           const el = document.querySelector(id);
@@ -126,6 +150,52 @@
         }
       });
     });
+
+    // Modal close handling (click overlay or close button, Esc key) with dialog API fallback
+    function closeModal(modal){
+      if (!modal) return;
+      if (typeof modal.close === 'function') modal.close();
+      else modal.classList.remove('open');
+    }
+
+    document.addEventListener('click', function(e){
+      const modal = document.getElementById('login');
+      if (!modal) return;
+      // click on overlay (outside modal content) or any element with .modal-close
+      if (e.target === modal || e.target.classList.contains('modal-close')){
+        closeModal(modal);
+      }
+    });
+
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape'){
+        const modal = document.getElementById('login');
+        // If using class-based fallback, check class; if dialog, close regardless
+        if (modal && (modal.classList.contains('open') || typeof modal.close === 'function')) closeModal(modal);
+      }
+    });
   </script>
+
+  <!-- Login modal (using native <dialog> for better accessibility; fallback to class-based overlay when dialog API not available) -->
+  <dialog id="login" class="modal" aria-labelledby="login-title">
+    <div class="modal-dialog">
+      <button class="modal-close" aria-label="Close">×</button>
+      <h3 id="login-title">Sign in</h3>
+      <form class="login-form" action="#" method="post">
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" placeholder="••••••••" required>
+        </label>
+        <div class="form-actions">
+          <button type="button" class="btn-secondary modal-close"> </button>
+          <button type="submit" class="btn-primary">Sign in</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
 </body>
 </html>
