@@ -11,6 +11,18 @@ Saklaw is a digital citizen portal designed to connect every resident to their b
 - **Secure Access:** User authentication ensures data privacy.
 - **Centralized Platform:** All services in one convenient portal.
 - **Community Empowerment:** Facilitates transparency and accessibility.
+This project uses a multi-license setup:
+
+- **Saklaw Core System** — [Non-Commercial Collaboration License (NCCL)](LICENSE)  
+  For personal and collaborative use only. Commercial use, resale, or redistribution is prohibited.
+
+- **Frontend Components** — [MIT License](LICENSE-MIT)  
+  Open for community improvement and educational reference.
+
+- **Logos, UI Designs, and Media** — [CC BY-NC 4.0](LICENSE-ASSETS)  
+  May not be used for commercial or promotional purposes.
+
+Unauthorized selling, copying, or leaking of this project’s code or concept is strictly prohibited.
 
 ## Installation
 1. Clone this repository:  
