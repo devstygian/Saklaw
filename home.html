@@ -8,7 +8,7 @@
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/f02a36f28e.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./assets/css/home.css">
 </head>
 <body>
   <header class="site-header">
@@ -88,18 +88,32 @@
     <section id="announcements" class="section announcements-section">
       <div class="wrap">
         <h2 class="section-title">Announcements</h2>
-        <div class="ann-grid">
-          <article class="announce">
-            <h4>Barangay Clean-Up Drive</h4>
-            <p>Our scheduled clean-up drive will be on September 20. Join us at 7:00 AM at the community center.</p>
-            <time datetime="2025-09-20">Sep 20, 2025</time>
-          </article>
+        <div class="carousel">
+          <div class="carousel-inner">
+            <article class="carousel-slide">
+              <h4>Barangay Clean-Up Drive</h4>
+              <p>Our scheduled clean-up drive will be on September 20. Join us at 7:00 AM at the community center.</p>
+              <time datetime="2025-09-20">Sep 20, 2025</time>
+            </article>
 
-          <article class="announce">
-            <h4>Community Center Renovation</h4>
-            <p>The barangay community center will start renovations on October 1. Services will be temporarily relocated.</p>
-            <time datetime="2025-10-01">Oct 1, 2025</time>
-          </article>
+            <article class="carousel-slide">
+              <h4>Community Center Renovation</h4>
+              <p>The barangay community center will start renovations on October 1. Services will be temporarily relocated.</p>
+              <time datetime="2025-10-01">Oct 1, 2025</time>
+            </article>
+
+            <article class="carousel-slide">
+              <h4>Vaccination Drive</h4>
+              <p>Free vaccination for children under 5 years old. Visit the health center from October 15-20.</p>
+              <time datetime="2025-10-15">Oct 15, 2025</time>
+            </article>
+          </div>
+
+          <div class="carousel-dots" role="tablist" aria-label="Carousel navigation">
+            <button role="tab" aria-selected="true" aria-label="Slide 1" class="dot active"></button>
+            <button role="tab" aria-selected="false" aria-label="Slide 2" class="dot"></button>
+            <button role="tab" aria-selected="false" aria-label="Slide 3" class="dot"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -107,9 +121,70 @@
     <section id="about" class="section about-section">
       <div class="wrap">
         <h2 class="section-title">About the Portal</h2>
-        <p>Saklaw is a digital citizen portal designed to connect every resident to their barangay’s essential services. It streamlines local transactions such as document requests, permits, and announcements — all in one secure online platform. By bringing governance closer to the people, Saklaw empowers communities through accessibility, transparency, and efficiency.</p>
+        <div class="about-container">
+          <div class="about-content">
+            <div class="about-card">
+              <div class="about-icon">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <h3>Digital Access</h3>
+              <p>Access barangay services anytime, anywhere through our secure online platform.</p>
+            </div>
+            
+            <div class="about-card">
+              <div class="about-icon">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+              <h3>Community First</h3>
+              <p>Bringing governance closer to the people through accessible digital solutions.</p>
+            </div>
+
+            <div class="about-card">
+              <div class="about-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <h3>Secure & Efficient</h3>
+              <p>Safe, streamlined processes for all your documentary and service needs.</p>
+            </div>
+          </div>
+          
+          <div class="about-actions">
+            <button class="btn-primary learn-more-btn" onclick="toggleAboutDescription()">
+              <span class="btn-text">Learn More</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+          </div>
+
+          <div id="about-description" class="about-description">
+            <div class="about-description-content">
+              <p>Saklaw is a digital citizen portal designed to connect every resident to their barangay's essential services. It streamlines local transactions such as document requests, permits, and announcements — all in one secure online platform.</p>
+              <p>By bringing governance closer to the people, Saklaw empowers communities through accessibility, transparency, and efficiency.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <script>
+      function toggleAboutDescription() {
+        const description = document.getElementById('about-description');
+        const btn = document.querySelector('.learn-more-btn');
+        const btnText = btn.querySelector('.btn-text');
+        const icon = btn.querySelector('i');
+        
+        description.classList.toggle('expanded');
+        
+        if (description.classList.contains('expanded')) {
+          btnText.textContent = 'Show Less';
+          icon.classList.remove('fa-chevron-down');
+          icon.classList.add('fa-chevron-up');
+        } else {
+          btnText.textContent = 'Learn More';
+          icon.classList.remove('fa-chevron-up');
+          icon.classList.add('fa-chevron-down');
+        }
+      }
+    </script>
   </main>
 
   <footer class="site-footer">
@@ -127,6 +202,70 @@
 
   <!-- small helpers -->
   <script>
+    // Carousel functionality
+    function initCarousel() {
+      const carousel = document.querySelector('.carousel');
+      if (!carousel) return;
+
+      const slides = carousel.querySelectorAll('.carousel-slide');
+      const dots = carousel.querySelectorAll('.dot');
+      let currentSlide = 0;
+      let autoplayInterval;
+
+      function showSlide(index) {
+        slides.forEach(slide => {
+          slide.classList.remove('active');
+          slide.style.transform = '';
+        });
+        dots.forEach(dot => {
+          dot.classList.remove('active');
+          dot.setAttribute('aria-selected', 'false');
+        });
+
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+        dots[index].setAttribute('aria-selected', 'true');
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        showSlide((currentSlide + 1) % slides.length);
+      }
+
+      function prevSlide() {
+        showSlide((currentSlide - 1 + slides.length) % slides.length);
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+      }
+
+      function stopAutoplay() {
+        if (autoplayInterval) {
+          clearInterval(autoplayInterval);
+        }
+      }
+
+      // Event listeners
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          showSlide(index);
+          stopAutoplay();
+        });
+      });
+
+      carousel.addEventListener('mouseenter', stopAutoplay);
+      carousel.addEventListener('mouseleave', startAutoplay);
+
+      // Initialize
+      showSlide(0);
+      startAutoplay();
+    }
+
+    // Initialize carousel when DOM is loaded
+    document.addEventListener('DOMContentLoaded', initCarousel);
+
     // Smooth scroll for anchor links, with special handling for the login modal
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', function(e){
