@@ -1,6 +1,3 @@
-/* styles.css - Barangay Digital Citizen Portal */
-/* Desktop-first responsive layout, modern gov style */
-
 :root{
   --primary:#1E40AF;   /* royal blue */
   --accent:#22274d;    /* golden yellow */
@@ -130,6 +127,15 @@ main{padding-top:72px}
 .section-title{font-size:28px;margin:0 0 22px;text-align:center}
 
 /* service cards */
+.cards a,
+.cards a:hover,
+.cards a:focus,
+.cards a:active {
+  text-decoration: none !important;
+  color: inherit;
+  outline: none;
+}
+
 .cards{
   display:grid;
   /* show 3 cards per row on desktop */
@@ -149,6 +155,7 @@ main{padding-top:72px}
 .card p{margin:0;color:var(--muted)}
 
 /* service form */
+
 .service-form{
   margin-top:10px;
   display:flex;
