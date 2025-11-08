@@ -7,36 +7,24 @@ $dbname = "saklaw";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if (!$conn) {
-    die("Connection Failed: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-$newupdate = isset($_POST['newupdate']) ? $_POST['newupdate'] : '';
-$updateID = isset($_POST['updateID']) ? $_POST['updateID'] : '';
-$title = isset($_POST['title']) ? $_POST['title'] : '';
-$Content = isset($_POST['Content']) ? $_POST['Content'] : '';
-$date = isset($_POST['date']) ? $_POST['date'] : '';
+$_REQUEST
 
-if (!empty($title) && !empty($Content) && !empty($date)) {
-    if ($newupdate == "ADD BOOK") {
 
-        $sql = "INSERT INTO book (title, Content, date)
-                VALUES ('$title', '$Content', '$date')";
-        $msg = "New announcement has been added!";
+if (mysqli_num_rows($result) > 0) {
+    while ($rows = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>" . $rows["title"] . "</td>";
+        echo "<td>" . $rows["Content"] . "</td>";
+        echo "<td>" . $rows["date"] . "</td>";
 
-    } else {
-
-        $sql = "UPDATE book 
-                SET title='$title', Content='$Content', date='$date' 
-                WHERE id='$updateID'";
-        $msg = "Announcement has been updated!";
-
+        echo "<td>
+    
     }
-
-    if (mysqli_query($conn, $sql)) {
-        echo $msg;
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
+} else {
+    echo "<tr><td colspan='6' align='center'>No Result Found!!</td></tr>";
 }
 
 mysqli_close($conn);
