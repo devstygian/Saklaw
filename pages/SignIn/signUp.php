@@ -31,14 +31,14 @@
   </header>
 
   <div class="container">
-    <h2 class="signIn-Text">Sign In</h2>
+    <h2 class="signIn-Text">Sign Up</h2>
     <form class="signIn-form" action="register.php" method="POST">
 
       <label>Gmail</label>
       <input type="Gmail" name="gmail" required>
       
       <label>Contact Number</label>
-      <input type="Number" name="number" required>
+      <input type="tel" name="number" maxlength="10" pattern="[0-9]{10}" required>
 
       <label>username</label>
       <input type="text" name="username" required>
