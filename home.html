@@ -319,11 +319,11 @@
     });
   </script>
 
-  <!-- Login modal (using native <dialog> for better accessibility; fallback to class-based overlay when dialog API not available) -->
+  <!-- Login modal -->
   <dialog id="login" class="modal" aria-labelledby="login-title">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Close">×</button>
-      <h3 id="login-title">Sign in</h3>
+      <h3 id="login-title">Sign Up</h3>
       <form class="login-form" action="#" method="post">
         <label>
           Email
@@ -332,13 +332,17 @@
         <label>
           Password
           <input type="password" name="password" placeholder="••••••••" required>
+          <p class="p-SignIn">Don't have account?<a href="../Saklaw/pages/SignIn/SignIn.php">Sign In</a></p>
         </label>
-        <div class="form-actions">
-          <button type="button" class="btn-secondary modal-close"> </button>
-          <button type="submit" class="btn-primary">Sign in</button>
+                
+        <div class="form-actions"> 
+          <button type="button" class="btn-secondary modal-close"> </button> 
+          <button type="submit" class="btn-primary">Enter</button>
         </div>
       </form>
     </div>
   </dialog>
+
+  
 </body>
 </html>

@@ -1,0 +1,133 @@
+:root{
+  --primary:#1E40AF;   /* royal blue */
+  --accent:#22274d;    /* golden yellow */
+  --bg:#F3F4F6;
+  --muted:#6B7280;
+  --text:#0F172A;
+  --card:#ffffff;
+  --radius:14px;
+  --maxw:1100px;
+  --gap:20px;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  font-size:16px;
+}
+/* make room for fixed header so content isn't hidden behind it */
+main{padding-top:72px}
+
+/* page wrap */
+.wrap{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:5px;
+}
+
+/* header */
+.site-header{
+  background:var(--primary);
+  color:#fff;
+  padding:10px 0;
+  box-shadow:0 6px 18px rgba(14, 30, 70, 0.12);
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  width:100%;
+  z-index:999;
+  font-size: 18px;
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{display:flex;align-items:center;gap:12px}
+.logo img{width:56px;height:56px;border-radius:6px;object-fit:cover}
+.logo-text strong{display:block;font-size:18px;letter-spacing:0.6px}
+.logo-text .sub{font-size:12px;opacity:0.95}
+
+/* nav */
+.main-nav a{
+  color:rgba(255,255,255,0.95);
+  text-decoration:none;
+  margin-left:18px;
+  font-weight:600;
+}
+.main-nav a:hover{
+  text-decoration:underline;
+}
+
+.container {
+  max-width: 600px;
+  background: var(--card);
+  border-radius: var(--radius);
+  margin: 40px auto 60px auto;
+  padding: 30px 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+.signIn-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+    }
+.signIn-form label {
+    font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px
+    }
+  .signIn-form input,
+.signIn-form select,
+.signIn-form textarea {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 15px;
+  width: 100%;
+  background-color: #fff;
+  transition: all 0.2s ease;
+}
+  
+.signIn-form input:focus,
+.signIn-form select:focus,
+.signIn-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+.submit-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: #1d3a95;
+  transform: translateY(-2px);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .form-container {
+    margin: 20px;
+    padding: 20px;
+  }
+  .section-title {
+    font-size: 22px;
+  }
+}

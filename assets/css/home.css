@@ -475,3 +475,8 @@ dialog.modal{
 .login-form input{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #E6E9EE;font-size:14px;margin-top:6px;background:#fff}
 .login-form .form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:12px}
 .btn-secondary{background:transparent;border:1px solid #E6E9EF;padding:10px 14px;border-radius:8px}
+
+.login-form a {
+  text-decoration: none !important;
+  color: inherit;
+}
