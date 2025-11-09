@@ -61,7 +61,35 @@ function toggleAboutDescription() {
           clearInterval(autoplayInterval);
         }
       }
+// Modal close handling (click overlay or close button, Esc key) with dialog API fallback
+    function closeModal(modal){
+      if (!modal) return;
+      if (typeof modal.close === 'function') modal.close();
+      else modal.classList.remove('open');
+    }
 
+    // Open the login modal when clicking the login button
+document.querySelector('.btn-login')?.addEventListener('click', function(e) {
+    e.preventDefault(); // prevent default anchor jump
+    const modal = document.getElementById('login');
+    if (!modal) return;
+
+    // Use dialog API if available
+    if (typeof modal.showModal === 'function') {
+        modal.showModal();
+    } else {
+        // Fallback for browsers without <dialog>
+        modal.classList.add('open');
+    }
+});
+
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape'){
+        const modal = document.getElementById('login');
+        // If using class-based fallback, check class; if dialog, close regardless
+        if (modal && (modal.classList.contains('open') || typeof modal.close === 'function')) closeModal(modal);
+      }
+    });
       // Event listeners
       dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
@@ -105,26 +133,4 @@ function toggleAboutDescription() {
       });
     });
 
-    // Modal close handling (click overlay or close button, Esc key) with dialog API fallback
-    function closeModal(modal){
-      if (!modal) return;
-      if (typeof modal.close === 'function') modal.close();
-      else modal.classList.remove('open');
-    }
-
-    document.addEventListener('click', function(e){
-      const modal = document.getElementById('login');
-      if (!modal) return;
-      // click on overlay (outside modal content) or any element with .modal-close
-      if (e.target === modal || e.target.classList.contains('modal-close')){
-        closeModal(modal);
-      }
-    });
-
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape'){
-        const modal = document.getElementById('login');
-        // If using class-based fallback, check class; if dialog, close regardless
-        if (modal && (modal.classList.contains('open') || typeof modal.close === 'function')) closeModal(modal);
-      }
-    });
+    
