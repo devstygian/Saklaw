@@ -24,12 +24,12 @@ if ($action === 'delete' && !empty($updateID)) {
     if (mysqli_query($conn, $sql)) {
         echo "<script>
                 alert('Announcement has been deleted successfully.');
-                window.location.href = 'news.php';
+                window.location.href = 'editForm.php';
               </script>";
     } else {
         echo "<script>
                 alert('Error deleting record: " . mysqli_error($conn) . "');
-                window.location.href = 'news.php';
+                window.location.href = 'editForm.php';
               </script>";
     }
 
@@ -39,12 +39,12 @@ if ($action === 'delete' && !empty($updateID)) {
     if (mysqli_query($conn, $sql)) {
         echo "<script>
                 alert('New announcement has been added!');
-                window.location.href = 'news.php';
+                window.location.href = 'editForm.php';
               </script>";
     } else {
         echo "<script>
                 alert('Error adding record: " . mysqli_error($conn) . "');
-                window.location.href = 'news.php';
+                window.location.href = 'editForm.php';
               </script>";
     }
 
@@ -54,19 +54,18 @@ if ($action === 'delete' && !empty($updateID)) {
     if (mysqli_query($conn, $sql)) {
         echo "<script>
                 alert('Announcement has been updated successfully.');
-                window.location.href = 'news.php';
+                window.location.href = 'editForm.php';
               </script>";
     } else {
         echo "<script>
                 alert('Error updating record: " . mysqli_error($conn) . "');
-                window.location.href = 'news.php';
+                window.location.href = 'editForm.php';
               </script>";
     }
 
 } else {
     echo "<script>
-            alert('Invalid action or missing data.');
-            window.location.href = 'news.php';
+            window.location.href = 'editForm.php';
           </script>";
 }
 

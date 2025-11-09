@@ -39,24 +39,34 @@ if($_SERVER ["REQUEST_METHOD"] == "POST" && isset($_POST ['updateID'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+        <link rel="stylesheet" href="../../../assets/css/news.css" />
+
 </head>
 <body>
     <?php include '../admin.php'; ?>
 
     <!-- Main Content -->
-    <div class="container">
+    <div class="main-content-3">
         <form method="post" action="edit.php">
-            <h1>FORM STUDENT</h1>
-            <label for="title">title:</label><br>
-            <input type="text" name="title" placeholder="Enter title" value="<?php echo $title; ?>"required><br><br>
+    <h1>Announcement Update</h1>
 
-            <label for="Content">Content</label><br>
-            <input type="text" name="Content" placeholder="Enter Content" value="<?php echo $Content ; ?>"required><br><br>
+    <!-- Hidden input for updateID -->
+    <input type="hidden" name="updateID" value="<?php echo $updateID; ?>">
 
-            <label for="date">date:</label><br>
-            <input type="date" name="date" placeholder="Enter date" value="<?php echo $date; ?>"required><br><br> 
-            <input type="submit" name="action" value="<?php echo $mode; ?>">
-        </div>
-    </form>
+    <label for="title">Title:</label><br>
+    <input type="text" name="title" placeholder="Enter title" value="<?php echo $title; ?>" required><br><br>
+
+    <label for="Content">Content:</label><br>
+    <input type="text" name="Content" placeholder="Enter Content" value="<?php echo $Content; ?>" required><br><br>
+
+    <label for="date">Date:</label><br>
+    <input type="date" name="date" value="<?php echo $date; ?>" required><br><br> 
+
+    <!-- Button sends 'update' action if editing, otherwise 'add' -->
+    <input type="submit" name="action" value="<?php echo $updateID ? 'update' : 'add'; ?>">
+    <a><button type="button" onclick="window.location.href='news.php'">Cancel</button></a>
+    <a href="news.php"><button type="button" >Back</button></a>
+</form>
+
 </body>
 </html>
