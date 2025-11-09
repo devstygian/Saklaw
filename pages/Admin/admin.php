@@ -23,7 +23,7 @@
       <ul class="menu list-unstyled">
         <li><a href="../../../pages/admin/dashboard/dash.php"><i class="fa-solid fa-grip"></i> Dashboard</a></li>
         <li><a href="../../../pages/admin/userRequest/userReq.php"><i class="fa-solid fa-table-columns"></i> User Request</a></li>
-        <li><a href="../../../pages/admin/anouncement/news.php"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
+        <li><a href="../../../pages/admin/announcement/news.php"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
         <li><a href="../../../pages/admin/reports/report.php"><i class="fa-solid fa-flag"></i> Reports</a></li>
       </ul>
       <div class="footer">
