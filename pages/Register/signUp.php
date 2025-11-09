@@ -35,28 +35,28 @@
     <form class="signIn-form" action="register.php" method="POST">
 
       <label>Gmail</label>
-      <input type="Gmail" name="gmail" required>
+      <input type="Gmail" name="gmail" >
       
       <label>Contact Number</label>
-      <input type="tel" name="number" maxlength="10" pattern="[0-9]{10}" required>
+      <input type="tel" name="number" maxlength="11" pattern="[0-9]{11}" >
 
       <label>username</label>
-      <input type="text" name="username" required>
+      <input type="text" name="username" >
 
       <label>Password</label>
-      <input type="password" name="password" required>
+      <input type="password" name="password" >
 
       <label>Fullname</label>
-      <input type="text" name="fullname" required>
+      <input type="text" name="fullname" >
 
       <label>Birthday</label>
-      <input type="date" name="birthday" required>
+      <input type="date" name="birthday" >
 
       <label>Address</label>
-      <input type="text" name="address" required>
+      <input type="text" name="address" >
 
       <label>ZIP CODE</label>
-      <input type="number" name="zipcode" required>
+      <input type="number" name="zipcode" >
 
 
 
@@ -76,6 +76,27 @@
           if (!$conn) {
               die("Connection failed: " . mysqli_connect_error());
           }
+    $userID = "";
+    $username = '';
+    $password ='';
+    $address = '';
+    $fullname = '';
+    $zipcode = '';
+    $birthday = '';
+    $gmail = '';
+    $number = '';
+    $mode = 'ADD';
+    
+
+if($_SERVER ["REQUEST_METHOD"] == "POST" && isset($_POST ['userID'])){
+
+    $userID = $_POST ['userID'];
+
+    $sql = "SELECT * FROM users WHERE userID = '$userID'";
+    $result = mysqli_query($conn, $sql);
+
+}
+
    ?>
 
 <?php
