@@ -98,35 +98,35 @@
   </dialog>
 
   <script>
-  // Coming Soon modal trigger for Survey card
-  const cards = document.getElementById("click");
-  const popUpmodal = document.getElementById("comingSoon");
+    // Coming Soon modal trigger for Survey card
+    const cards = document.getElementById("click");
+    const popUpmodal = document.getElementById("comingSoon");
+    
+    // Open the modal when clicking the Survey card
+    cards?.addEventListener("click", function(e) {
+      e.preventDefault();
+      if (typeof popUpmodal.showModal === "function") {
+        popUpmodal.showModal();
+      } else {
+        popUpmodal.classList.add("open"); // fallback for browsers without dialog
+      }
+    });
 
-  // Open the modal when clicking the Survey card
-  cards?.addEventListener("click", function(e) {
-    e.preventDefault();
-    if (typeof popUpmodal.showModal === "function") {
-      popUpmodal.showModal();
-    } else {
-      popUpmodal.classList.add("open"); // fallback for browsers without dialog
-    }
-  });
+    // Close modal when clicking the X button
+    popUpmodal.querySelector(".modal-close")?.addEventListener("click", () => {
+      if (typeof popUpmodal.close === "function") {
+        popUpmodal.close();
+      } else {
+        popUpmodal.classList.remove("open");
+      }
+    });
 
-  // Close modal when clicking the X button
-  popUpmodal.querySelector(".modal-close")?.addEventListener("click", () => {
-    if (typeof popUpmodal.close === "function") {
-      popUpmodal.close();
-    } else {
-      popUpmodal.classList.remove("open");
-    }
-  });
-
-  // Close when pressing Escape
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && popUpmodal.open) {
-      popUpmodal.close();
-    }
-  });
+    // Close when pressing Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && popUpmodal.open) {
+        popUpmodal.close();
+      }
+    });
 </script>
 
 
