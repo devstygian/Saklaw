@@ -1,0 +1,29 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#dcc8c6",
+        "activityBar.background": "#dcc8c6",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#558a5a",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#15202b99",
+        "sash.hoverBorder": "#dcc8c6",
+        "statusBar.background": "#c9a9a6",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#b68a86",
+        "statusBarItem.remoteBackground": "#c9a9a6",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#c9a9a6",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#c9a9a699",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#C9A9A6",
+    "cSpell.words": [
+        "adsbygoogle",
+        "Barangay",
+        "hiiiiiiiiiiiiii",
+        "newupdate",
+        "saklaw"
+    ]
+}
