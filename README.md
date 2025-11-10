@@ -28,10 +28,10 @@ Unauthorized selling, copying, or leaking of this project’s code or concept is
    git clone https://github.com/yourusername/saklaw.git
 
 ## The Members
-### Progteam:
+### Prog Team:
   - **Joshua ALvarez**
   - **Christ Jericho Coching**
-### Researcher:
+### Researcher Team:
   - **Edrian Salvador**
   - **Nikko Nangit**
   - **Jebee Añober**
