@@ -1,9 +1,7 @@
-# Saklaw
+# Saklaw Barangay Protal
 
-**Tagline:** “Lahat ay saklaw, lahat ay konektado.”
-
-## Description
-Saklaw is a digital citizen portal designed to connect every resident to their barangay’s essential services. It streamlines local transactions such as document requests, permits, and announcements — all in one secure online platform. By bringing governance closer to the people, Saklaw empowers communities through accessibility, transparency, and efficiency.
+## What Is Saklaw?
+Saklaw is a **digital citizen portal designed to connect every resident to their barangay’s essential services**. It streamlines local transactions such as document requests, permits, and announcements — all in one secure online platform. By bringing governance closer to the people, Saklaw empowers communities through accessibility, transparency, and efficiency.
 
 ## Features
 - **Citizen Services:** Request documents and permits online.
@@ -24,7 +22,22 @@ This project uses a multi-license setup:
 
 Unauthorized selling, copying, or leaking of this project’s code or concept is strictly prohibited.
 
-## Installation
+## For Contribution
 1. Clone this repository:  
    ```bash
    git clone https://github.com/yourusername/saklaw.git
+
+## The Members
+### Progteam:
+  - **Joshua ALvarez**
+  - **Christ Jericho Coching**
+### Researcher:
+  - **Edrian Salvador**
+  - **Nikko Nangit**
+  - **Jebee Añober**
+  - **James Karvin Carl Nava**
+  - **Aldin Cayao**
+  - **Jerickson Yap Del Rosasrio**
+
+## For more info
+- [Contact us](hackstygian@gmail.com)
