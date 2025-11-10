@@ -1,3 +1,40 @@
+
+  <?php
+    // ✅ Database connection
+    
+          $servername = "localhost";
+          $username = "root";
+          $password = "";
+          $dbname = "saklaw";
+
+          $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+          if (!$conn) {
+              die("Connection failed: " . mysqli_connect_error());
+          } 
+
+    $idregistration = "";
+    $username = '';
+    $password ='';
+    $address = '';
+    $fullname = '';
+    $ziipcode = '';
+    $birthday = '';
+    $gmail = '';
+    $number = '';
+    $mode = 'ADD USER';
+
+if($_SERVER ["REQUEST_METHOD"] == "POST" && isset($_POST ['idregistration'])){
+    $idregistration = $_POST ['idregistration'];
+    $sql = "SELECT * FROM registration WHERE idregistration = '$idregistration'";
+    $result = mysqli_query($conn, $sql);
+}
+if ($result && mysqli_num_rows($result) > 0 ){
+        $row = mysqli_fetch_assoc($result);
+        $idregistration = $_POST['idregistration'];
+    }
+   ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -33,71 +70,34 @@
   <div class="container">
     <h2 class="signIn-Text">Sign Up</h2>
     <form class="signIn-form" action="register.php" method="POST">
-
+      <input  type="hidden" name="idregistration" value="<?php echo $idregistration ?>">
       <label>Gmail</label>
-      <input type="Gmail" name="gmail" >
+      <input type="Gmail" name="gmail" value="<?php echo $gmail?>"required>
       
       <label>Contact Number</label>
-      <input type="tel" name="number" maxlength="11" pattern="[0-9]{11}" >
+      <input type="tel" name="number" maxlength="11" pattern="[0-9]{11}"value="<?php echo $number?>" required>
 
       <label>username</label>
-      <input type="text" name="username" >
+      <input type="text" name="username" value="<?php echo $username ?>" required>
 
       <label>Password</label>
-      <input type="password" name="password" >
+      <input type="password" name="password" value="<?php echo $password ?>" required>
 
       <label>Fullname</label>
-      <input type="text" name="fullname" >
+      <input type="text" name="fullname" value="<?php echo $fullname ?>" required>
 
       <label>Birthday</label>
-      <input type="date" name="birthday" >
+      <input type="date" name="birthday" value="<?php echo $birthday?>"required >
 
       <label>Address</label>
-      <input type="text" name="address" >
+      <input type="text" name="address" value="<?php echo $address?>"required>
 
       <label>ZIP CODE</label>
-      <input type="number" name="zipcode" >
-
-
-
-      <button type="submit" class="submit-btn" value="SignIn" name="signin">Sign In</button>
+      <input type="number" name="zipcode" value="<?php echo $zipcode?>"required>
+      <button type="submit" class="submit-btn" value="SignIn" name="action" value="<?php $mode?>">Sign In</button>
 
     </form>
   </div>
-  <?php
-    // ✅ Database connection
-          $servername = "localhost";
-          $username = "root";
-          $password = "";
-          $dbname = "saklaw";
-
-          $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-          if (!$conn) {
-              die("Connection failed: " . mysqli_connect_error());
-          }
-    $userID = "";
-    $username = '';
-    $password ='';
-    $address = '';
-    $fullname = '';
-    $zipcode = '';
-    $birthday = '';
-    $gmail = '';
-    $number = '';
-    $mode = 'ADD';
-    
-
-if($_SERVER ["REQUEST_METHOD"] == "POST" && isset($_POST ['userID'])){
-
-    $userID = $_POST ['userID'];
-
-    $sql = "SELECT * FROM users WHERE userID = '$userID'";
-    $result = mysqli_query($conn, $sql);
-
-}
-
-   ?>
 
 <?php
           mysqli_close($conn);
