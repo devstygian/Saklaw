@@ -62,7 +62,7 @@
             <p>File complaints or incident reports confidentially.</p>
           </a>
 
-          <a href="../Saklaw/pages/charity/charity.php" class="card">
+          <a href="#" class="card" id="donate">
             <div class="icon"><i class="fa-solid fa-hand-holding-heart"></i></i></div>
             <h3>Charity</h3>
             <p>Help The One Who In Needs.</p>
@@ -74,22 +74,22 @@
               <p>See the closest Healthcare at your area.</p>
           </a>
 
-          <a href="#" class="card">
+          <a href="#" class="card" id="educ">
             <div class="icon"><i class="fa-solid fa-school-flag"></i></i></div>
             <h3>Education</h3>
             <p>See the all the available offer of the Barangay.</p>
           </a>
 
-           <a href="#popUp" class="card" id="click">
+           <a href="#" class="card" id="click">
             <div class="icon"><i class="fa-solid fa-clipboard-list"></i></div>
             <h3>Survey</h3>
-            <p>See the latest Barangay Survey.</p>
+            <p>See the latest Barangay click.</p>
           </a>
         </div>
       </div>
     </section>
 
-    <!--popup modal-->
+    <!--POPUP MODAL-->
   <dialog id="comingSoon" class="modal" aria-labelledby="comingSoon-title">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Close">×</button>
@@ -98,36 +98,50 @@
     </div>
   </dialog>
 
-  <script>
-    // Coming Soon modal trigger for Survey card
-    const cards = document.getElementById("click");
-    const popUpmodal = document.getElementById("comingSoon");
-    
-    // Open the modal when clicking the Survey card
-    cards?.addEventListener("click", function(e) {
+<script>
+  const modals = document.querySelectorAll("dialog");
+  modals.forEach(modal => {
+    // Close on click of any .modal-close button
+    modal.querySelectorAll(".modal-close").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (typeof modal.close === "function") modal.close();
+        else modal.classList.remove("open");
+      });
+    });
+
+    // Close on overlay click
+    modal.addEventListener("click", (e) => {
+      const dialogBox = modal.querySelector(".modal-dialog");
+      if (!dialogBox.contains(e.target)) {
+        if (typeof modal.close === "function") modal.close();
+        else modal.classList.remove("open");
+      }
+    });
+  });
+
+  const comingSoon = document.getElementById("comingSoon");
+  const triggerIDs = ["donate", "educ", "click"]; // multiple links
+
+  triggerIDs.forEach(id => {
+    const link = document.getElementById(id);
+    link?.addEventListener("click", e => {
       e.preventDefault();
-      if (typeof popUpmodal.showModal === "function") {
-        popUpmodal.showModal();
-      } else {
-        popUpmodal.classList.add("open"); // fallback for browsers without dialog
-      }
+      if (typeof comingSoon.showModal === "function") comingSoon.showModal();
+      else comingSoon.classList.add("open");
     });
+  });
 
-    // Close modal when clicking the X button
-    popUpmodal.querySelector(".modal-close")?.addEventListener("click", () => {
-      if (typeof popUpmodal.close === "function") {
-        popUpmodal.close();
-      } else {
-        popUpmodal.classList.remove("open");
-      }
-    });
-
-    // Close when pressing Escape
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && popUpmodal.open) {
-        popUpmodal.close();
-      }
-    });
+  // Close modal with ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modals.forEach(m => {
+        if (m.open || m.classList.contains("open")) {
+          if (typeof m.close === "function") m.close();
+          else m.classList.remove("open");
+        }
+      });
+    }
+  }); 
 </script>
 
 
