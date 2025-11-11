@@ -243,7 +243,7 @@
   <dialog id="openModal" class="modal" aria-labelledby="login-title">
     <div class="modal-dialog">
       <button class="modal-close" aria-label="Close">×</button>
-      <h3 id="login-title">Sign Up</h3>
+      <h3 id="login-title">Sign In</h3>
       <form class="login-form" action="#signUp.php" method=post">
         <label>
           Email
@@ -252,7 +252,7 @@
         <label>
           Password
           <input type="password" name="password" placeholder="••••••••" required>
-          <p class="p-SignIn">Don't have account?<a href="../Saklaw/pages/Register/signUp.php">Sign In</a></p>
+          <p class="p-SignIn">Don't have account?<a href="../Saklaw/pages/Register/signUp.php">Sign Up</a></p>
         </label>
                 
         <div class="form-actions"> 
@@ -264,50 +264,50 @@
   </dialog>
   </body>
   <script>
-const login = document.getElementById("Cliklogin");
-const loginModal = document.getElementById("openModal");
+    const login = document.getElementById("Cliklogin");
+    const loginModal = document.getElementById("openModal");
 
-// open log 
-login?.addEventListener("click", function(e) {
-  e.preventDefault();
-  if (typeof loginModal.showModal === "function") {
-    loginModal.showModal();
-  } else {
-    loginModal.classList.add("open"); // fallback for older browsers
-  }
-});
+    // open log 
+    login?.addEventListener("click", function(e) {
+      e.preventDefault();
+      if (typeof loginModal.showModal === "function") {
+        loginModal.showModal();
+      } else {
+        loginModal.classList.add("open"); // fallback for older browsers
+      }
+    });
 
-// close when click X
-loginModal.querySelectorAll(".modal-close").forEach(btn => {
-  btn.addEventListener("click", () => {
-    if (typeof loginModal.close === "function") {
-      loginModal.close();
-    } else {
-      loginModal.classList.remove("open");
-    }
-  });
-});
+    // close when click X
+    loginModal.querySelectorAll(".modal-close").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (typeof loginModal.close === "function") {
+          loginModal.close();
+        } else {
+          loginModal.classList.remove("open");
+        }
+      });
+    });
 
-// overlay close
-loginModal.addEventListener("click", (e) => {
-  const dialogBox = loginModal.querySelector(".modal-dialog");
-  if (!dialogBox.contains(e.target)) {
-    if (typeof loginModal.close === "function") {
-      loginModal.close();
-    } else {
-      loginModal.classList.remove("open");
-    }
-  }
-});
-// esc
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && (loginModal.open || loginModal.classList.contains("open"))) {
-    if (typeof loginModal.close === "function") {
-      loginModal.close();
-    } else {
-      loginModal.classList.remove("open");
-    }
-  }
-});
+    // overlay close
+    loginModal.addEventListener("click", (e) => {
+      const dialogBox = loginModal.querySelector(".modal-dialog");
+      if (!dialogBox.contains(e.target)) {
+        if (typeof loginModal.close === "function") {
+          loginModal.close();
+        } else {
+          loginModal.classList.remove("open");
+        }
+      }
+    });
+    // esc
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && (loginModal.open || loginModal.classList.contains("open"))) {
+        if (typeof loginModal.close === "function") {
+          loginModal.close();
+        } else {
+          loginModal.classList.remove("open");
+        }
+      }
+    });
 </script>
 </html>
