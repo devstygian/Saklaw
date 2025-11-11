@@ -8,8 +8,6 @@
   <script src="../../../Saklaw/assets/js/home.js"></script>
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/f02a36f28e.js" crossorigin="anonymous"></script>
-
-  <!-- Your CSS -->
   <link rel="stylesheet" href="../../../assets/css/admin.css" />
 </head>
 <body>
