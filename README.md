@@ -30,7 +30,7 @@ Unauthorized selling, copying, or leaking of this project’s code or concept is
 ## The Members
 ### Prog Team:
   - **[Joshua](https://github.com/devstygian) Alvarez**
-  - **Christ Jericho Coching**
+  - **Christ Jericho [Coching](https://github.com/Huhucoching)**
 ### Researcher Team:
   - **Edrian Salvador**
   - **Nikko Nangit**
