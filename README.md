@@ -29,7 +29,7 @@ Unauthorized selling, copying, or leaking of this project’s code or concept is
 
 ## The Members
 ### Prog Team:
-  - **Joshua ALvarez**
+  - **[Joshua](https://github.com/devstygian) Alvarez**
   - **Christ Jericho Coching**
 ### Researcher Team:
   - **Edrian Salvador**
