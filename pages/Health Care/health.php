@@ -22,11 +22,10 @@
       </div>
 
       <nav class="main-nav" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#announcements">Announcements</a>
-        <a href="#about">About</a>
-        <a class="btn-login" href="#" id="Cliklogin"><i class="fa-solid fa-user"></i></a>
+        <a href="../../home.php">Home</a>
+        <a href="../../home.php #services">Services</a>
+        <a href="../../home.php #announcements">Announcements</a>
+        <a href="../../home.php #about">About</a>
       </nav>
     </div>
   </header>
@@ -48,6 +47,73 @@
       <li><i class="fa-solid fa-phone"></i> Police Department: 1-800-222-1222</li>   
     <ul>
   </div>
+
+  <main class="main">
+  <section id="health-centers" class="section health-section">
+    <h2 class="section-title">Hospitals and Clinics in the Barangay</h2>
+
+    <div class="health-list">
+      <div class="health-item">
+        <h3>Barangay Health Center 1</h3>
+        <p>Address: 123 Main Street</p>
+        <p>Contact: (0917) 123-4567</p>
+      </div>
+
+      <div class="health-item">
+        <h3>Ace Hospital</h3>
+        <p>Address: 456 Health Avenue</p>
+        <p>Contact: (0918) 765-4321</p>
+      </div>
+
+      <div class="health-item">
+        <h3>Vet Clinic</h3>
+        <p>Address: 321 Care Street</p>
+        <p>Contact: (0921) 333-4444</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  .main {
+  margin-left: 300px; 
+  padding: 20px;
+  background-color: var(--background);
+  min-height: 100vh;
+  margin-top: -40%; 
+  }
+.health-list {
+  display: flex;
+  flex-direction: column; 
+  gap: var(--gap);
+}
+
+.health-item {
+  background: var(--card);
+  padding: 15px 20px;
+  width: 80%;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.health-item h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--primary);
+}
+
+.health-item p {
+  margin: 4px 0;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.health-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+</style>
 
 
   </body>

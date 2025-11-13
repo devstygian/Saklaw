@@ -21,12 +21,14 @@
         </div>
       </div>
 
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="../../home.html">Home</a>
-        <a href="../../home.html#services">Services</a>
-        <a href="../../home.html#announcements">Announcements</a>
-        <a href="../../home.html#about">About</a>
-      </nav>
+     <nav class="main-nav" aria-label="Main navigation">
+      <a href="../../home.php" style="text-decoration: none;">Home</a>
+      <a href="../../home.php #services" style="text-decoration: none;">Services</a>
+      <a href="../../home.php #announcements" style="text-decoration: none;">Announcements</a>
+      <a href="../../home.php #about" style="text-decoration: none;">About</a>
+    </nav>
+
+      
     </div>
 
     
