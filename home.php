@@ -5,12 +5,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Saklaw</title>
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/f02a36f28e.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./assets/css/home.css">
-   <script src="../Saklaw/assets/js/home.js"></script>
+  <script src="../Saklaw/assets/js/home.js"></script>
 </head>
 <body>
   <header class="site-header">
@@ -113,7 +111,7 @@
         <h2 class="section-title">Announcements</h2>
         <div class="carousel">
           <div class="carousel-inner">
-            <a class="carousel-slide">
+            <a class="carousel-slide active">
               <h4>Barangay Clean-Up Drive</h4>
               <p>Our scheduled clean-up drive will be on September 20. Join us at 7:00 AM at the community center.</p>
               <time datetime="2025-09-20">Sep 20, 2025</time>
@@ -140,6 +138,25 @@
         </div>
       </div>
     </section>
+    <<script>
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dots = document.querySelectorAll('.dot');
+      let current = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
+        current = index;
+      }
+
+      // Auto-rotate every 5 seconds
+      setInterval(() => {
+        showSlide((current + 1) % slides.length);
+      }, 5000);
+
+      // Dot click navigation
+      dots.forEach((dot, i) => dot.addEventListener('click', () => showSlide(i)));
+    </script>
 
 <!--About-->
     <section id="about" class="section about-section">
@@ -188,21 +205,7 @@
         </div>
       </div>
     </section>
-  </main>
-
-<!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6318920818085530"
-      crossorigin="anonymous"></script>
-  <!-- first-ads -->
-  <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-6318920818085530"
-      data-ad-slot="4856050510"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-  <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+  </main>   
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
