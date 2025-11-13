@@ -1,7 +1,7 @@
 # Saklaw Barangay Protal
 
 ## What Is Saklaw?
-Saklaw is a **digital citizen portal designed to connect every resident to their barangay’s essential services**. It streamlines local transactions such as document requests, permits, and announcements — all in one secure online platform. By bringing governance closer to the people, Saklaw empowers communities through accessibility, transparency, and efficiency.
+The "Baranggay Profiling and Household Information Management System" (Saklaw) is a system designed to simplify and hasten the handling process of residents' data at the baranggay level. Instead of manual handling, it gives a computerized system for keeping household information more accurately and in a much more organized way. It will easily provide barangay officials with the necessary data to support decision-making, formulate community programs, and deliver better services to residents. This also covers enhanced security, reduced human error, effective transparency, and delivery of public services faster to the whole community.
 
 ## Features
 - **Citizen Services:** Request documents and permits online.
@@ -29,8 +29,8 @@ Unauthorized selling, copying, or leaking of this project’s code or concept is
 
 ## The Members
 ### Prog Team:
-  - **Joshua ALvarez**
-  - **Christ Jericho Coching**
+  - **[Joshua](https://github.com/devstygian) Alvarez**
+  - **Christ Jericho [Coching](https://github.com/Huhucoching)**
 ### Researcher Team:
   - **Edrian Salvador**
   - **Nikko Nangit**
