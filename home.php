@@ -136,11 +136,10 @@
 </style>
 
 <script>
-  // Select all dialog elements
   const modals = document.querySelectorAll("dialog");
 
   modals.forEach(modal => {
-    // Close on click of any .modal-close button
+    // x button
     modal.querySelectorAll(".modal-close").forEach(btn => {
       btn.addEventListener("click", () => {
         if (typeof modal.close === "function") modal.close();
@@ -148,7 +147,7 @@
       });
     });
 
-    // Close on overlay click (outside content)
+    // overlay closed
     modal.addEventListener("click", (e) => {
       const dialogBox = modal.querySelector(".modal-content");
       if (!dialogBox.contains(e.target)) {
@@ -158,7 +157,7 @@
     });
   });
 
-  // Close all modals on ESC key
+  // ESC key
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       modals.forEach(m => {
