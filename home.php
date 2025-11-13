@@ -16,8 +16,8 @@
       <div class="logo">
         <img src="https://imgs.search.brave.com/ln_ju330B84pQ05S5Y941vpBrCrGWaJqRw5jIcPPf-I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy9h/L2EzL1BHUF9OZXdf/T2ZmaWNpYWxfU2Vh/bC5wbmc" alt="Barangay Seal" />
         <div class="logo-text">
-          <strong>BARANGAY</strong>
-          <span class="sub">Digital Citizen Portal</span>
+          <strong>Barangay Profiling </strong>&
+          <span class="sub">Household Information Management System</span>
         </div>
       </div>
 
@@ -278,8 +278,16 @@
 
           <div id="about-description" class="about-description">
             <div class="about-description-content">
-              <p>Saklaw is a digital citizen portal designed to connect every resident to their barangay's essential services. It streamlines local transactions such as document requests, permits, and announcements — all in one secure online platform.</p>
-              <p>By bringing governance closer to the people, Saklaw empowers communities through accessibility, transparency, and efficiency.</p>
+              <h3>About Barangay Profiling and Household Information Management System</h3>
+              <p>Our group aims to create an innovative system that will not only benefit one or a few
+                  people but everyone, including all areas covered and reachable by the project we will
+                  implement. The project we will undertake is about a system that can help and speed
+                  up work and processes for everyone.
+                  With this system, people can also save on transportation costs and will no longer
+                  need to travel to the barangay just to process requirements for their needs because
+                  the system we will create will be very helpful, not only for one person but for all
+                  people who need it and want to make their document processing easier and faster.
+                </p> 
             </div>
           </div>
         </div>
@@ -287,14 +295,8 @@
     </section>
   </main>   
 
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <div>
-        <h4>Contact</h4>
-        <p>128 Main St., Barangay 1, City Name</p>
-        <p>Email: barangay@example.com</p>
-      </div>
-    </div>
+  <footer class="footer">
+ 
     <div class="wrap" style="padding-top:8px;">
       <p style="text-align:center; margin:0;"> © 2025 Barangay Digital Portal | All Rights Reserve</p>
     </div>

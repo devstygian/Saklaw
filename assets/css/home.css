@@ -390,16 +390,6 @@ main{padding-top:72px}
   }
 }
 
-/* footer */
-.site-footer{
-  background:linear-gradient(180deg,var(--primary), #14306f);
-  color:#fff;
-  margin-top:40px;
-  padding:24px 0;
-}
-.footer-inner{display:flex;justify-content:space-between;align-items:center}
-.footer-inner h4{margin:0}
-.footer-right{opacity:0.92}
 
 /* responsive */
 @media (max-width:1000px){
