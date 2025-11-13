@@ -104,6 +104,87 @@
         </div>
       </div>
     </section>
+<dialog id="comingSoon" class="modal" aria-labelledby="comingSoon-title">
+  <div class="modal-dialog"> 
+    <button class="modal-close" aria-label="Close">×</button> 
+    <h3 id="comingSoon-title"><i class="fa-solid fa-bullhorn">
+    </i> Coming Soon</h3> 
+    <p>Stay tuned for updates!</p> 
+  </div> 
+</dialog>
+<<style>
+    .modal-content {
+      border: none;
+      border-radius: 10px;
+      padding: 25px 30px;
+      background: #dbdbdaff;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+      max-width: 400px;
+      width: 100%;
+    }
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .modal-close {  
+      padding: 8px
+      color: #0a0a0aff;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background 0.2s ease;
+    }
+</style>
+
+<script>
+  // Select all dialog elements
+  const modals = document.querySelectorAll("dialog");
+
+  modals.forEach(modal => {
+    // Close on click of any .modal-close button
+    modal.querySelectorAll(".modal-close").forEach(btn => {
+      btn.addEventListener("click", () => {
+        if (typeof modal.close === "function") modal.close();
+        else modal.classList.remove("open");
+      });
+    });
+
+    // Close on overlay click (outside content)
+    modal.addEventListener("click", (e) => {
+      const dialogBox = modal.querySelector(".modal-content");
+      if (!dialogBox.contains(e.target)) {
+        if (typeof modal.close === "function") modal.close();
+        else modal.classList.remove("open");
+      }
+    });
+  });
+
+  // Close all modals on ESC key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      modals.forEach(m => {
+        if (m.open || m.classList.contains("open")) {
+          if (typeof m.close === "function") m.close();
+          else m.classList.remove("open");
+        }
+      });
+    }
+  });
+
+  // Trigger open for multiple buttons/links
+  const comingSoon = document.getElementById("comingSoon");
+  const triggerIDs = ["donate", "educ", "click" , "sed" , "CI" ,"BC"]; // Example IDs
+
+  triggerIDs.forEach(id => {
+    const link = document.getElementById(id);
+    if (link) {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        if (typeof comingSoon.showModal === "function") comingSoon.showModal();
+        else comingSoon.classList.add("open");
+      });
+    }
+  });
+</script>
 
     <!--Announcements-->
   <section id="announcements" class="section announcements-section">
