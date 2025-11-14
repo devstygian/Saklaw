@@ -106,13 +106,17 @@
     </section>
 <dialog id="comingSoon" class="modal" aria-labelledby="comingSoon-title">
   <div class="modal-dialog"> 
-    <button class="modal-close" aria-label="Close">×</button> 
+    <button class="modal-close" aria-label="Close">X</button> 
     <h3 id="comingSoon-title"><i class="fa-solid fa-bullhorn">
     </i> Coming Soon</h3> 
     <p>Stay tuned for updates!</p> 
   </div> 
 </dialog>
-<<style>
+<style>
+ dialog {
+
+      border: none;
+    }
     .modal-content {
       border: none;
       border-radius: 10px;
@@ -126,12 +130,16 @@
     dialog::backdrop {
       background: rgba(0, 0, 0, 0.5);
     }
-    .modal-close {  
-      padding: 8px
+    .modal-close { 
+      margin-left: 90%;
       color: #0a0a0aff;
       cursor: pointer;
       font-size: 0.95rem;
       transition: background 0.2s ease;
+      text-decoration: none;
+      border: none;
+      background:none;
+      font-weight: bolder;
     }
 </style>
 
