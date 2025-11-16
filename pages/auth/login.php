@@ -5,21 +5,17 @@ include 'db_connection.php';
 $error = "";
 
 if (isset($_POST['login'])) {
-
-    // Sanitize input
     $gmail = mysqli_real_escape_string($conn, $_POST['gmail']);
-    $password = $_POST['password']; // raw password
-
-    // Fetch user from database
+    $password = $_POST['password']; 
+\\
     $sql = "SELECT * FROM userdata WHERE gmail='$gmail'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
         $user = mysqli_fetch_assoc($result);
 
-        // Verify password using password_verify()
         if (password_verify($password, $user['password'])) {
-            $_SESSION['gmail'] = $user['gmail']; // store session
+            $_SESSION['gmail'] = $user['gmail']; 
             header("Location: ../Saklaw/home.php");
             exit();
         } else {
@@ -36,11 +32,7 @@ if (isset($_POST['login'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-
-  <!-- Your CSS -->
   <link rel="stylesheet" href="../../../Saklaw/assets/css/auth.css">
-
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
   <style>
