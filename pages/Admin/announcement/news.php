@@ -10,7 +10,7 @@
     <?php include '../admin.php'; ?>
  <!-- Main Content -->
     <div class="main-content-3">
-      <h3>News Announcements</h3>
+      <h3>Announcements</h3>
 
       <table class="request-table-3">
         <thead>

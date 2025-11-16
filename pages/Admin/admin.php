@@ -23,12 +23,9 @@
         <li><a href="../../../pages/admin/userRequest/userReq.php"><i class="fa-solid fa-table-columns"></i> User Request</a></li>
         <li><a href="../../../pages/admin/announcement/news.php"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
         <li><a href="../../../pages/admin/reports/report.php"><i class="fa-solid fa-flag"></i> Reports</a></li>
+        <li><a href="../../../pages/auth/logout.php" class="text-decoration-none"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+
       </ul>
-      <div class="footer">
-        <a href="../back-end/adminlogout.php" class="text-decoration-none">
-          <i class="fa-solid fa-right-from-bracket"></i>
-        </a>
-      </div>
     </div>
 
     <!-- Top Navbar -->
