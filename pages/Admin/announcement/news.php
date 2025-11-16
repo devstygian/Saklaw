@@ -45,14 +45,15 @@
                     echo "<td>
                     <form method='POST' action='edit.php'>
                         <input type='hidden' name='updateID' value='" . $rows['updateID'] . "'>
-                        <input type='submit' value='Edit' class='edit-btn'>
+                        <input type='submit' value=' Edit ' class='edit-btn'>
                     </form>
-
+                    <br>
                     <form method='POST' action='delete.php'>
                         <input type='hidden' name='updateID' value='" . $rows['updateID'] . "'>
                         <input type='hidden' name='newupdate' value='DELETE'>
-                        <input type='submit' value='Delete' class='delete-btn'>
-                    </td>";
+                        <input type='submit' value=' Delete ' class='delete-btn'>
+                    </td> ";
+                    
 
                     echo "</tr>";
                 }

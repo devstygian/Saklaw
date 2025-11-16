@@ -19,11 +19,11 @@
       </div>
       <div class="logo">Admin</div>
       <ul class="menu list-unstyled">
-        <li><a href="../../../pages/admin/dashboard/dash.php"><i class="fa-solid fa-grip"></i> Dashboard</a></li>
-        <li><a href="../../../pages/admin/userRequest/userReq.php"><i class="fa-solid fa-table-columns"></i> User Request</a></li>
-        <li><a href="../../../pages/admin/announcement/news.php"><i class="fa-solid fa-bullhorn"></i> Announcements</a></li>
-        <li><a href="../../../pages/admin/reports/report.php"><i class="fa-solid fa-flag"></i> Reports</a></li>
-        <li><a href="../../../pages/auth/logout.php" class="text-decoration-none"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+        <li><a href="../../../pages/admin/dashboard/dash.php"><i class="fa-solid fa-grip"></i> &nbsp Dashboard</a></li>
+        <li><a href="../../../pages/admin/userRequest/userReq.php"><i class="fa-solid fa-table-columns"></i> &nbsp User Request</a></li>
+        <li><a href="../../../pages/admin/announcement/news.php"><i class="fa-solid fa-bullhorn"></i> &nbsp Announcements</a></li>
+        <li><a href="../../../pages/admin/reports/report.php"><i class="fa-solid fa-flag"></i> &nbsp Reports</a></li>
+        <li><a href="../../../pages/auth/logout.php" class="text-decoration-none"><i class="fa-solid fa-right-from-bracket"></i> &nbsp Logout</a>
 
       </ul>
     </div>
