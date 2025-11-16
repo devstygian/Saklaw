@@ -126,8 +126,8 @@ if($_SERVER ["REQUEST_METHOD"] == "POST" && isset($_POST ['updateID'])){
             <input type="date" name="date" value="<?php echo $date; ?>" required><br><br> 
 
             <!-- Button sends 'update' action if editing, otherwise 'add' -->
-            <input type="submit" name="action" value="<?php echo $updateID ? 'update' : 'add'; ?>">
-            <a><button type="button" onclick="window.location.href='news.php'">Cancel</button></a>
+            <input type="submit" name="action" value="<?php echo $updateID ? 'update' : 'Add'; ?>">
+            <!--<a><button type="button" onclick="window.location.href='news.php'">Cancel</button></a>-->
             <a href="news.php"><button type="button" >Back</button></a>
         </form>
     </div>

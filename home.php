@@ -216,6 +216,12 @@
               <p>Free vaccination for children under 5 years old. Visit the health center from October 15-20.</p>
               <time datetime="2025-10-15">Oct 15, 2025</time>
             </a>
+
+             <a class="carousel-slide">
+              <h4>Growing papulation of crocodile in palawan!</h4>
+              <p>Experts have documented several crocodile nesting sites during a night survey in Barangay Canipaan.</p>
+              <time datetime="2025-11-117">Oct 15, 2025</time>
+            </a>
           </div>
 
           <div class="carousel-dots" role="tablist" aria-label="Carousel navigation">

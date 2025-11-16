@@ -33,7 +33,7 @@ if ($action === 'delete' && !empty($updateID)) {
               </script>";
     }
 
-} elseif ($action === 'add' && !empty($title) && !empty($content) && !empty($date)) {
+} elseif ($action === 'Add' && !empty($title) && !empty($content) && !empty($date)) {
     // INSERT
     $sql = "INSERT INTO newupdate (title, Content, date) VALUES ('$title', '$content', '$date')";
     if (mysqli_query($conn, $sql)) {

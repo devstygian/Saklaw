@@ -7,7 +7,7 @@ $error = "";
 if (isset($_POST['login'])) {
     $gmail = mysqli_real_escape_string($conn, $_POST['gmail']);
     $password = $_POST['password']; 
-\\
+
     $sql = "SELECT * FROM userdata WHERE gmail='$gmail'";
     $result = mysqli_query($conn, $sql);
 

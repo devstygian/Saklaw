@@ -58,6 +58,13 @@
                             <input type='submit' value='Delete' class='delete-btn'>
                         </form>
                       </td>";
+                    echo "<tr>
+                    <td colspan='4' align='center'>
+                        <form method='POST' action='edit.php'>
+                            <input type='submit' value='Add Announcement' class='edit-btn'>
+                        </form>
+                    </td>
+                  </tr>";
                 echo "</tr>";
             }
 
