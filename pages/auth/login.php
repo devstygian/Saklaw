@@ -6,16 +6,25 @@ $error = "";
 
 if (isset($_POST['login'])) {
 
+    // Sanitize input
     $gmail = mysqli_real_escape_string($conn, $_POST['gmail']);
-    $password = md5($_POST['password']);
+    $password = $_POST['password']; // raw password
 
-    $sql = "SELECT * FROM userdata WHERE gmail='$gmail' AND password='$password'";
+    // Fetch user from database
+    $sql = "SELECT * FROM userdata WHERE gmail='$gmail'";
     $result = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($result) > 0) {
-        $_SESSION['gmail'] = $gmail;
-        header("Location: ../Saklaw/home.php");
-        exit();
+        $user = mysqli_fetch_assoc($result);
+
+        // Verify password using password_verify()
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['gmail'] = $user['gmail']; // store session
+            header("Location: ../Saklaw/home.php");
+            exit();
+        } else {
+            $error = "Invalid gmail or password!";
+        }
     } else {
         $error = "Invalid gmail or password!";
     }
@@ -27,31 +36,34 @@ if (isset($_POST['login'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
+
+  <!-- Your CSS -->
   <link rel="stylesheet" href="../../../Saklaw/assets/css/auth.css">
+
+  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
   <style>
-    
-.password-wrapper {
-    position: relative;
-    width: 100%;
-}
+    .password-wrapper {
+        position: relative;
+        width: 100%;
+    }
 
-.password-wrapper input {
-    width: 100%;
-    padding-right: 40px; 
-    box-sizing: border-box;
-}
+    .password-wrapper input {
+        width: 100%;
+        padding-right: 40px; 
+        box-sizing: border-box;
+    }
 
-.password-wrapper #togglePassword {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #666;
-    font-size: 1.2rem;
-}
+    .password-wrapper #togglePassword {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #666;
+        font-size: 1.2rem;
+    }
   </style>
 </head>
 <body>
@@ -87,7 +99,6 @@ const password = document.querySelector("#password");
 togglePassword.addEventListener("click", function () {
     const type = password.getAttribute("type") === "password" ? "text" : "password";
     password.setAttribute("type", type);
-
     this.classList.toggle("bi-eye");
     this.classList.toggle("bi-eye-slash");
 });
