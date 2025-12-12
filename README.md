@@ -1,4 +1,4 @@
-# Saklaw Barangay Protal
+# Barangay Protal
 
 ## What Is Saklaw?
 The "Baranggay Profiling and Household Information Management System" (Saklaw) is a system designed to simplify and hasten the handling process of residents' data at the baranggay level. Instead of manual handling, it gives a computerized system for keeping household information more accurately and in a much more organized way. It will easily provide barangay officials with the necessary data to support decision-making, formulate community programs, and deliver better services to residents. This also covers enhanced security, reduced human error, effective transparency, and delivery of public services faster to the whole community.
